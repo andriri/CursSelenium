@@ -33,7 +33,7 @@ public class IsEnabledExample extends BaseTest{
 		
 		jse.executeScript("arguments[0].setAttribute('disabled', '')", usernameFields);
 		
-		System.out.println("Username after disable :" + usernameFields.isEnabled());  //false
+		System.out.println("Username after disable :" + usernameFields.isEnabled());  //false - l-am facut sa crape cu un element disabled
 		
 		usernameFields.sendKeys("TestUser "); //scriem in userName: TestUser
 		
