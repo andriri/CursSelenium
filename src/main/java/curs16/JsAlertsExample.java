@@ -15,8 +15,9 @@ public class JsAlertsExample extends BaseTest {
 	public void simpleJSAlert() throws InterruptedException {
 		
 		driver.get("https://the-internet.herokuapp.com/javascript_alerts");
-		
-		driver.findElement(By.cssSelector("button[onclick='jsAlert()']")).click(); //
+		WebElement button = driver.findElement(By.cssSelector("button[onclick='jsAlert()']"));
+		button.click();
+	//	driver.findElement(By.cssSelector("button[onclick='jsAlert()']")).click(); //
 		Thread.sleep(3000);
 		
 		Alert alertaJs = driver.switchTo().alert(); //
@@ -44,7 +45,7 @@ public class JsAlertsExample extends BaseTest {
 	
 	
 	@Test(priority =3)
-	public void promptJsAlert() {
+	public void promptJsAlert() throws InterruptedException  {
 		driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 		driver.findElement(By.cssSelector("button[onclick='jsPrompt()']")).click(); 
 		Thread.sleep(3000);
