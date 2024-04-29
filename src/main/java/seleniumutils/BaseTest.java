@@ -1,5 +1,7 @@
 package seleniumutils;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -18,6 +20,7 @@ public class BaseTest {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize(); //mereu pornim pagina web pe pagina maximizata
 											 //pentru a gasi toate butoanele cu locatorii (e diferit pe telefon vs monitor)
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://keybooks.ro/");
 		
 		
