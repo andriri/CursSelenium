@@ -15,7 +15,7 @@ public class ImplicitWaitExample  extends BaseTest{
 	@Test
 	public void implicitWaitExample() throws InterruptedException {
 		
-		driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
+		driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
