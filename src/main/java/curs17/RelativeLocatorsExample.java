@@ -26,7 +26,7 @@ public class RelativeLocatorsExample extends BaseTest{
 		JavascriptExecutor jse =(JavascriptExecutor) driver;
 		
 		//toLightOf
-		WebElement price10_20= driver.findElement(RelativeLocator.with(By.cssSelector("h5[class*='sc_title']")).toLeftOf(By.cssSelector("a[href='life-in-the-garden']")));
+		WebElement price10_20= driver.findElement(RelativeLocator.with(By.cssSelector("h5[class*='sc_title']")).toRightOf(By.cssSelector("a[href='life-in-the-garden']")));
 			
 		
 		jse.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 6px solid green;')", price10_20);
@@ -38,14 +38,22 @@ public class RelativeLocatorsExample extends BaseTest{
 		jse.executeScript("arguments[0].setAttribute('style', 'background: orange; border: 6px solid blue;')", price15_99);
 		
 		//below
-		WebElement price15_05= driver.findElement(RelativeLocator.with(By.cssSelector("div[class='wpb_wrapper']>p")).below(By.cssSelector("div[class='wpb_wrapper']>p")));
+		//WebElement price15_05= driver.findElement(RelativeLocator.with(By.cssSelector("div[class='wpb_wrapper']>p")).below(By.cssSelector("div[class='wpb_wrapper']>p")));
 						
-		jse.executeScript("arguments[0].setAttribute('style', 'background: grey; border: 6px solid black;')", price15_05);
+		//jse.executeScript("arguments[0].setAttribute('style', 'background: grey; border: 6px solid black;')", price15_05);
 		
 		//above
-		WebElement author= driver.findElement(RelativeLocator.with(By.cssSelector("div[class='wpb_wrapper']>p")).above(By.cssSelector("div[class='wpb_wrapper']>p")));
+		//WebElement author= driver.findElement(RelativeLocator.with(By.cssSelector("div[class='wpb_wrapper']>p")).above(By.cssSelector("div[class='wpb_wrapper']>p")));
 		
-		jse.executeScript("arguments[0].setAttribute('style', 'background: grey; border: 6px solid black;')", author);
+		//jse.executeScript("arguments[0].setAttribute('style', 'background: grey; border: 6px solid black;')", author);
+		
+		//below
+		WebElement price15_05 = driver.findElement(RelativeLocator.with(By.cssSelector("h5[class*='sc_title']")).below(By.cssSelector("div[class='wpb_wrapper']>p")));
+		jse.executeScript("arguments[0].setAttribute"+ "('style', 'background: grey;border:6px solid black;')",price15_05 );
+		//above
+		WebElement authorAllanGreen = driver.findElement(RelativeLocator.with(By.cssSelector("div[class='wpb_wrapper']>p")).above(By.cssSelector("h5[class*='sc_title']")));
+		jse.executeScript("arguments[0].setAttribute"+ "('style', 'background: grey;border:6px solid black;')",authorAllanGreen );
+				
 		
 				
 	}

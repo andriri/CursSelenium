@@ -22,7 +22,7 @@ public class HomeworkCssSelector  {
 		driver.manage().window().maximize(); 
 	}	
 	
-	public void testBooReview() throws InterruptedException {	
+	public void testSongleAuthor() throws InterruptedException {	
 		 
 
 		WebElement book = driver.findElement(By.cssSelector("a[href='the-son']"));
